@@ -12,7 +12,7 @@ if(process.env.MONGODB_URI) {
   config = require("./config/index");
 }
 
-mongoose.connect(process.env.MONGODB_URI || config.dbUri);
+mongoose.connect(process.env.MONGODB_URI || config.dbUri, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -20,5 +20,5 @@ app.use(bodyParser.json());
 app.use(routes);
 
 app.listen(PORT, () => {
-    console.log(`Connect on port: ${PORT}!`);
+    console.log(`Connected on port: ${PORT}!`);
 })
