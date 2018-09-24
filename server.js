@@ -20,5 +20,5 @@ app.use(bodyParser.json());
 app.use(routes);
 
 app.listen(PORT, () => {
-    console.log(`Connected on port: ${PORT}!`);
+    console.log(`Connected on port: ${PORT}`);
 })
